@@ -3,14 +3,13 @@
 #include "utils/userInput.hpp"
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
-// falta por acabar (repetir mientras no sea un comado valido)
 vector<string> readInput(vector<string> commands) {
 	string user_in_str = "";
 	vector<string> user_in;
 	do {
 		cout << "> ";
 		cin >> user_in_str;
-		user_in = split(user_in_str, ' ');
+		user_in = split(user_in_str, '#');
 	} while (!count(commands.begin(), commands.end(), user_in.at(0)));
 	return user_in;
 }
