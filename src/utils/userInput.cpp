@@ -3,10 +3,11 @@
 #include "utils/userInput.hpp"
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
-int readOpt(int max) {
-	int out = 0;
+// falta por acabar (repetir mientras no sea un comado valido)
+int readOpt() {
+	string out = "";
 	do {
-		cout << "Escribe una opción: ";
+		cout << "> ";
 		cin >> out;
 	} while (out < 0 || out > max);
     cout << "\n";

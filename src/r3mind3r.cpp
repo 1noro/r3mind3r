@@ -5,15 +5,12 @@
 #include "main.hpp"
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
-void printMenu() {
+void printHelp() {
     cout << "\n";
-    cout << "--- MENU ---\n";
-    cout << " 1 - Altas\n";
-    cout << " 2 - Listados\n";
-    cout << " 3 - Media de edad\n";
-    cout << " 4 - Nombre del mayor int argc, y menor (no rep.)\n";
+    cout << " n\tNuevo evento\n";
+    cout << " l\tListar eventos pendientes\n";
     cout << "\n";
-    cout << " 0 - Salir\n";
+    cout << " exit\tSalir\n";
     cout << "\n";
 }
 
