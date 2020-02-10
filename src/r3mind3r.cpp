@@ -7,6 +7,7 @@
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
 void printHelp() {
     cout << "\n";
+    cout << " h\tMuestra esta ayuda\n";
     cout << " n\tNuevo evento\n";
     cout << " l\tListar eventos pendientes\n";
     cout << "\n";
@@ -24,17 +25,17 @@ int main(int argc, char** argv) {
     (void) argc;
     string fullDir = "";
 
-    vector<string> commands {"n", "l", "exit"};
+    vector<string> commands {"h", "n", "l", "exit"};
 
     if (argv[1] == NULL) fullDir = "data/aa.dat";
         else fullDir = argv[1];
 
     string opt = "";
     do {
-        printHelp();
         opt = readOpt(commands);
         if (opt != "exit") {
-            if (opt == "n") newEvent();
+            if (opt == "h") printHelp();
+            else if (opt == "n") newEvent();
             else if (opt == "l") listEvents();
         }
     } while (opt != "exit");
