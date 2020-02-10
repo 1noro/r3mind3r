@@ -22,9 +22,9 @@ class Event {
         void setDesc(string _desc);
         string getDesc();
         void setIniDate(time_t _ini_date);
-        string getIniDate();
+        time_t getIniDate();
         void setEndDate(time_t _end_date);
-        string getEndDate();
+        time_t getEndDate();
 
         string toFileLine();
         string toCliLine();
