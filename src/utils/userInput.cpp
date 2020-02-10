@@ -4,14 +4,15 @@
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
 // falta por acabar (repetir mientras no sea un comado valido)
-string readOpt(vector<string> commands) {
-	string out = "";
+vector<string> readInput(vector<string> commands) {
+	string user_in_str = "";
+	vector<string> user_in;
 	do {
 		cout << "> ";
-		cin >> out;
-	} while (!count(commands.begin(), commands.end(), out));
-    cout << "\n";
-	return out;
+		cin >> user_in_str;
+		user_in = split(user_in_str, ' ');
+	} while (!count(commands.begin(), commands.end(), user_in.at(0)));
+	return user_in;
 }
 
 // --- LECTURAS Y VALIDACIONES DE FORMATO --------------------------------------

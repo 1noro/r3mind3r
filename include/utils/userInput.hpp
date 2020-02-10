@@ -7,7 +7,7 @@
 using namespace std;    //para no tener que poner std:: delante de cada cosa
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
-string readOpt(vector<string> commands);
+vector<string> readInput(vector<string> commands);
 
 // --- LECTURAS Y VALIDACIONES DE FORMATO --------------------------------------
 // string readNombre(string finAltas);
