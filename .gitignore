@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+#inoro
+*.out
+*.dat
+*.o
+main
+build/
+data/
