@@ -7,6 +7,7 @@ APP_DIR  := $(BUILD)/apps
 TARGET   := r3mind3r
 INCLUDE  := -Iinclude/
 SRC      :=                      \
+	$(wildcard src/structs/*.cpp) \
 	$(wildcard src/utils/*.cpp) \
 	$(wildcard src/classes/*.cpp) \
 	$(wildcard src/*.cpp)         \

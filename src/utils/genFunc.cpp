@@ -1,4 +1,5 @@
 
+#include "structs/def.hpp"
 #include "utils/genFunc.hpp"
 
 #include <sstream>      //para hacer el split
@@ -41,4 +42,24 @@ string autotab2mod(string str, int characters) {
     if ((int) str.length() < characters) str += "\t\t";
         else str += "\t";
     return str;
+}
+
+boolInfo isDir(string pathname) {
+    boolInfo out;
+    out.value = false;
+    struct stat info;
+    if (stat(pathname.c_str(), &info) != 0) {
+        //cout << "[FAIL] cannot access: '" << pathname << "'\n";
+        out.errno = 1;
+        //out.desc = (string) "cannot access".c_str();
+    } else if (info.st_mode & S_IFDIR) {  // S_ISDIR() doesn't exist on my windows
+        out.value = true;
+        out.errno = 0;
+        //out.desc = (string) "all OK".c_str();
+    } else {
+        //cout << "[FAIL] '" << pathname << "' is no directory\n";
+        out.errno = 2;
+        //out.desc = (string) "is no directory".c_str();
+    }
+    return out;
 }

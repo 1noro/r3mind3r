@@ -11,19 +11,12 @@ using namespace std;    //para no tener que poner std:: delante de cada cosa
 string finAltas = "fin";
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
-void printMenu();
-int readOpt(int max);
-
-// --- LECTURAS Y VALIDACIONES DE FORMATO --------------------------------------
-string readNombre();
-int readEdad();
+void printHelp();
 
 // --- FUNCIONES GENÉRICAS -----------------------------------------------------
-void saveAlta(string line, string fullDir);
-void altas(string fullDir);
-void printListados(string fullDir);
-void printMediaEdad(string fullDir);
-void printNombreMayorMenor(string fullDir);
+void newEvent();
+void listEvents();
+void echo(vector<string> in);
 
 // --- MAIN --------------------------------------------------------------------
 int main(int argc, char** argv);

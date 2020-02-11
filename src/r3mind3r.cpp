@@ -1,4 +1,5 @@
 
+#include "structs/def.hpp"
 #include "utils/genFunc.hpp"
 #include "utils/userInput.hpp"
 #include "classes/Event.hpp"
@@ -44,6 +45,11 @@ int main(int argc, char** argv) {
         "echo",
         "exit"
     };
+
+    cout << "isDir: " << isDir("/").value << "\n";
+    cout << "isDir: " << isDir("data").value << "\n";
+    cout << "isDir: " << isDir("/jj").value << "\n";
+    cout << "isDir: " << isDir("LICENSE").value << "\n";
 
     if (argv[1] == NULL) fullDir = "data/aa.dat";
         else fullDir = argv[1];
