@@ -10,6 +10,8 @@ vector<string> readInput(vector<string> commands) {
 		cout << "> ";
 		getline(cin, user_in_str);
 		user_in = split(user_in_str, ' ');
+		if (!count(commands.begin(), commands.end(), user_in.at(0)))
+			cout << "[FAIL]: el comando '" << user_in.at(0) << "' no existe\n";
 	} while (!count(commands.begin(), commands.end(), user_in.at(0)));
 	return user_in;
 }

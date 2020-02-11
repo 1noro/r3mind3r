@@ -8,8 +8,8 @@
 void printHelp() {
     cout << "# Ayuda:\n";
     cout << " " << autotab2mod("h, help", 7) << "Muestra esta ayuda\n";
-    cout << " " << autotab2mod("n", 7) << "Nuevo evento\n";
-    cout << " " << autotab2mod("l", 7) << "Listar eventos pendientes\n";
+    cout << " " << autotab2mod("n, new", 7) << "Nuevo evento\n";
+    cout << " " << autotab2mod("l, list", 7) << "Listar eventos pendientes\n";
     cout << " " << autotab2mod("echo", 7) << "Devuelve lo escrito a continuación por pantalla\n";
     cout << "\n";
     cout << " " << autotab2mod("exit", 7) << "Salir\n";
@@ -17,12 +17,14 @@ void printHelp() {
 
 // --- FUNCIONES GENÉRICAS -----------------------------------------------------
 void newEvent() {cout << ">> newEvent\n";}
-void listEvents(string in) {cout << ">> listEvents: " << in << "\n";}
+void listEvents() {cout << ">> listEvents" << "\n";}
 
 void echo(vector<string> in) {
-    for (int i = 1; i < (int) in.size() - 1; i++)
-        cout << in.at(i) << " ";
-    cout << in.at(in.size() - 1) << "\n";
+    if (in.size() > 1) {
+        for (int i = 1; i < (int) in.size() - 1; i++)
+            cout << in.at(i) << " ";
+        cout << in.at(in.size() - 1) << "\n";
+    }
 }
 
 // --- MAIN --------------------------------------------------------------------
@@ -31,11 +33,14 @@ int main(int argc, char** argv) {
     (void) argc;
     string fullDir = "";
     vector<string> user_in;
+    string cmm = "";
 
     vector<string> commands {
         "h", "help",
         "n",
+        "new",
         "l",
+        "list",
         "echo",
         "exit"
     };
@@ -45,11 +50,12 @@ int main(int argc, char** argv) {
 
     do {
         user_in = readInput(commands);
-        if (user_in.at(0) != "exit") {
-            if (user_in.at(0) == "h") printHelp();
-            else if (user_in.at(0) == "n") newEvent();
-            else if (user_in.at(0) == "l") listEvents(user_in.at(1));
-            else if (user_in.at(0) == "echo") echo(user_in);
+        cmm = user_in.at(0);
+        if (cmm != "exit") {
+            if (cmm == "h" || cmm == "help") printHelp();
+            else if (cmm == "n" || cmm == "new") newEvent();
+            else if (cmm == "l" || cmm == "list") listEvents();
+            else if (cmm == "echo") echo(user_in);
         }
     } while (user_in.at(0) != "exit");
     cout << "Bye (; ;)\n";
