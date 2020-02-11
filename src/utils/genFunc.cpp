@@ -13,6 +13,15 @@ vector<string> split(const string& s, char delimiter) {
     return tokens;
 }
 
+vector<string> splitSpaces(string str) {
+    istringstream iss(str);
+    vector<string> out(
+        istream_iterator<string>{iss},
+        istream_iterator<string>()
+    );
+    return out;
+}
+
 bool isNumber(string str) {
     int i = 0;
     bool out = true;

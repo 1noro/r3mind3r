@@ -4,12 +4,13 @@
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
 vector<string> readInput(vector<string> commands) {
+	(void) commands;
 	string user_in_str = "";
 	vector<string> user_in;
 	do {
 		cout << "> ";
-		cin >> user_in_str;
-		user_in = split(user_in_str, '#');
+		getline(cin, user_in_str);
+		user_in = split(user_in_str, ' ');
 	} while (!count(commands.begin(), commands.end(), user_in.at(0)));
 	return user_in;
 }

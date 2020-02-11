@@ -31,8 +31,6 @@ int main(int argc, char** argv) {
 
     do {
         user_in = readInput(commands);
-        for (auto it = user_in.begin(); it != user_in.end(); it++)
-            cout << "# '" << *it << "'\n";
         if (user_in.at(0) != "exit") {
             if (user_in.at(0) == "h") printHelp();
             else if (user_in.at(0) == "n") newEvent();
