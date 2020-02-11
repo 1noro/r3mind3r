@@ -9,3 +9,4 @@ vector<string> split(const string& s, char delimiter);
 vector<string> splitSpaces(string text);
 bool isNumber(string str);
 string autotab2(string str);
+string autotab2mod(string str, int characters);

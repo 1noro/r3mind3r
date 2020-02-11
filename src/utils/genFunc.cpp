@@ -36,3 +36,9 @@ string autotab2(string str) {
         else str += "\t";
     return str;
 }
+
+string autotab2mod(string str, int characters) {
+    if ((int) str.length() < characters) str += "\t\t";
+        else str += "\t";
+    return str;
+}

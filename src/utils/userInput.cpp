@@ -4,7 +4,6 @@
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
 vector<string> readInput(vector<string> commands) {
-	(void) commands;
 	string user_in_str = "";
 	vector<string> user_in;
 	do {
