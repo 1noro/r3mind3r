@@ -3,6 +3,6 @@
 
 struct boolInfo {
     bool value;
-    int errno;
+    int err_no;
     //char* desc;
 };

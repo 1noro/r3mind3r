@@ -46,10 +46,10 @@ int main(int argc, char** argv) {
         "exit"
     };
 
-    cout << "isDir: " << isDir("/").value << "\n";
-    cout << "isDir: " << isDir("data").value << "\n";
-    cout << "isDir: " << isDir("/jj").value << "\n";
-    cout << "isDir: " << isDir("LICENSE").value << "\n";
+    cout << "isDir '/': " << isDir("/").value << ", " << isDir("/").err_no << "\n";
+    cout << "isDir 'data': " << isDir("data").value << ", " << isDir("data").err_no << "\n";
+    cout << "isDir '/jj': " << isDir("/jj").value << ", " << isDir("/jj").err_no << "\n";
+    cout << "isDir 'LICENSE': " << isDir("LICENSE").value << ", " << isDir("LICENSE").err_no << "\n";
 
     if (argv[1] == NULL) fullDir = "data/aa.dat";
         else fullDir = argv[1];
