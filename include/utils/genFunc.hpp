@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#include "structs/def.hpp"
+
 using namespace std;    //para no tener que poner std:: delante de cada cosa
 
 vector<string> split(const string& s, char delimiter);

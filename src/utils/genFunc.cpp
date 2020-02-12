@@ -1,5 +1,4 @@
 
-#include "structs/def.hpp"
 #include "utils/genFunc.hpp"
 
 #include <sstream>      //para hacer el split
