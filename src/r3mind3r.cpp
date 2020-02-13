@@ -46,12 +46,12 @@ int main(int argc, char** argv) {
     // Asignamos el directorio de datos
     dir = checkDataDir(argv[1], defDir);
 
-    string strPath = "jj/";
+    /*string strPath = "jj/";
     #if defined(_WIN32)
         _mkdir(strPath.c_str());
     #else
         mkdir(strPath.c_str(), 0777); // notice that 777 is different than 0777
-    #endif
+    #endif*/
 
     do {
         user_in = readInput(commands);
