@@ -1,9 +1,9 @@
 
 #include <iostream>     //imprimir por pantalla
-#include <fstream>      //leer archivos
+//#include <fstream>      //leer archivos
 #include <string>       //usar strings
 #include <vector>       //usar arrays
-#include <sstream>      //para hacer el split
+//#include <sstream>      //para hacer el split
 
 using namespace std;    //para no tener que poner std:: delante de cada cosa
 

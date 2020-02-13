@@ -1,5 +1,4 @@
 
-//#include <iostream>     //imprimir por pantalla
 #include <vector>       //usar arrays
 #include <string>       //usar strings
 #include <iterator>     //poder usar istringstream

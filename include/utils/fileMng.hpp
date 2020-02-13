@@ -1,4 +1,6 @@
 
 #include <string>       //usar strings
 
-string checkDataDir(string userDir, string defDir);
+using namespace std;    //para no tener que poner std:: delante de cada cosa
+
+string checkDataDir(char* userDir, string defDir);
