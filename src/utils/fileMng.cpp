@@ -17,16 +17,19 @@ string checkDataDir(char* userDir, string defDir) {
     } else if (userDir != NULL && !isDir(userDir).value && isDir(defDir).value) {
         out = userDir;
         cout << "[FAIL] error al determinar el directorio de datos '";
-        cout << userDir << "': " << isDir(userDir).err_no << "\n";
+        cout << userDir << "': " << isDir(userDir).desc << " (";
+        cout << isDir(userDir).err_no << ")\n";
         cout << "[INFO] asignado directorio de datos por defecto: '";
         cout << defDir << "'\n";
     } else if (userDir != NULL && !isDir(userDir).value) {
         cout << "[FAIL] error al determinar el directorio de datos '";
-        cout << userDir << "': " << isDir(userDir).err_no << "\n";
+        cout << userDir << "': " << isDir(userDir).desc << " (";
+        cout << isDir(userDir).err_no << ")\n";
         exit(1);
     } else {
         cout << "[FAIL] error al determinar el directorio de datos '";
-        cout << defDir << "': " << isDir(defDir).err_no << "\n";
+        cout << defDir << "': " << isDir(defDir).desc << " (";
+        cout << isDir(defDir).err_no << ")\n";
         exit(1);
     }
     return out;

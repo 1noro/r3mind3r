@@ -30,7 +30,6 @@ void echo(vector<string> in) {
 
 // --- MAIN --------------------------------------------------------------------
 int main(int argc, char** argv) {
-    // string fullDir = "/opt/archivosJava/altasEdad01cpp.dat";
     (void) argc;
     string dir = "";
     vector<string> user_in;
@@ -38,18 +37,11 @@ int main(int argc, char** argv) {
 
     vector<string> commands {
         "h", "help",
-        "n",
-        "new",
-        "l",
-        "list",
+        "n", "new",
+        "l", "list",
         "echo",
         "exit"
     };
-
-    // cout << "isDir '/': " << isDir("/").value << ", " << isDir("/").err_no << "\n";
-    // cout << "isDir 'data': " << isDir("data").value << ", " << isDir("data").err_no << "\n";
-    // cout << "isDir '/jj': " << isDir("/jj").value << ", " << isDir("/jj").err_no << "\n";
-    // cout << "isDir 'LICENSE': " << isDir("LICENSE").value << ", " << isDir("LICENSE").err_no << "\n";
 
     // Asignamos el directorio de datos
     dir = checkDataDir(argv[1], defDir);

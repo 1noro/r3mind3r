@@ -49,17 +49,15 @@ boolInfo isDir(string pathname) {
     out.err_no = 0;
     struct stat info;
     if (stat(pathname.c_str(), &info) != 0) {
-        //cout << "[FAIL] cannot access: '" << pathname << "'\n";
         out.err_no = 1;
-        //out.desc = (string) "cannot access".c_str();
+        out.desc = "cannot access";
     } else if (info.st_mode & S_IFDIR) {  // S_ISDIR() doesn't exist on my windows
         out.value = true;
         out.err_no = 0;
-        //out.desc = (string) "all OK".c_str();
+        out.desc = "all OK";
     } else {
-        //cout << "[FAIL] '" << pathname << "' is no directory\n";
         out.err_no = 2;
-        //out.desc = (string) "is no directory".c_str();
+        out.desc = "is no directory";
     }
     return out;
 }
