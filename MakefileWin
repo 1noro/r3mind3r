@@ -1,7 +1,7 @@
 CXX      := -gcc
 CXXFLAGS := -pedantic-errors -Wall -Wextra -Werror
 LDFLAGS  := -L/usr/lib -lstdc++ -lm
-BUILD    := .
+BUILD    := ./build
 OBJ_DIR  := $(BUILD)
 APP_DIR  := $(BUILD)
 TARGET   := r3mind3r
