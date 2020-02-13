@@ -32,7 +32,7 @@ void echo(vector<string> in) {
 int main(int argc, char** argv) {
     // string fullDir = "/opt/archivosJava/altasEdad01cpp.dat";
     (void) argc;
-    string fullDir = "";
+    string dir = "";
     vector<string> user_in;
     string cmm = "";
 
@@ -46,13 +46,23 @@ int main(int argc, char** argv) {
         "exit"
     };
 
-    cout << "isDir '/': " << isDir("/").value << ", " << isDir("/").err_no << "\n";
-    cout << "isDir 'data': " << isDir("data").value << ", " << isDir("data").err_no << "\n";
-    cout << "isDir '/jj': " << isDir("/jj").value << ", " << isDir("/jj").err_no << "\n";
-    cout << "isDir 'LICENSE': " << isDir("LICENSE").value << ", " << isDir("LICENSE").err_no << "\n";
+    // cout << "isDir '/': " << isDir("/").value << ", " << isDir("/").err_no << "\n";
+    // cout << "isDir 'data': " << isDir("data").value << ", " << isDir("data").err_no << "\n";
+    // cout << "isDir '/jj': " << isDir("/jj").value << ", " << isDir("/jj").err_no << "\n";
+    // cout << "isDir 'LICENSE': " << isDir("LICENSE").value << ", " << isDir("LICENSE").err_no << "\n";
 
-    if (argv[1] == NULL) fullDir = "data/aa.dat";
-        else fullDir = argv[1];
+    // Asignamos el directorio de datos
+    if (argv[1] == NULL && isDir(defDir).value) dir = defDir;
+        else if (isDir(argv[1]).value) dir = defDir;
+        else if (argv[1] != NULL) {
+            cout << "[FAIL] error al determinar el directorio de datos '";
+            cout << argv[1] << "': " << isDir(argv[1]).err_no << "\n";
+            exit(1);
+        } else {
+            cout << "[FAIL] error al determinar el directorio de datos '";
+            cout << defDir << "': " << isDir(defDir).err_no << "\n";
+            exit(1);
+        }
 
     do {
         user_in = readInput(commands);

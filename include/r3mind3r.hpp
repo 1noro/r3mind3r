@@ -9,6 +9,7 @@ using namespace std;    //para no tener que poner std:: delante de cada cosa
 
 // --- VARIABLES GLOBALES ------------------------------------------------------
 string finAltas = "fin";
+string defDir = "data/";
 
 // --- INTERFAZ DE USUARIO -----------------------------------------------------
 void printHelp();
