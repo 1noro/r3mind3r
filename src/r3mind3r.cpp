@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
             else if (cmm == "echo") echo(user_in);
         }
     } while (user_in.at(0) != "exit");
-    cout << "Bye (; ;)\n";
+    cout << "bye (; ;)\n";
     return 0;
 }
 
