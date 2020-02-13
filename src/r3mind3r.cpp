@@ -1,7 +1,7 @@
 
-#include "structs/def.hpp"
 #include "utils/genFunc.hpp"
 #include "utils/userInput.hpp"
+#include "utils/fileMng.hpp"
 #include "classes/Event.hpp"
 #include "r3mind3r.hpp"
 
@@ -52,17 +52,7 @@ int main(int argc, char** argv) {
     // cout << "isDir 'LICENSE': " << isDir("LICENSE").value << ", " << isDir("LICENSE").err_no << "\n";
 
     // Asignamos el directorio de datos
-    if (argv[1] == NULL && isDir(defDir).value) dir = defDir;
-        else if (isDir(argv[1]).value) dir = defDir;
-        else if (argv[1] != NULL) {
-            cout << "[FAIL] error al determinar el directorio de datos '";
-            cout << argv[1] << "': " << isDir(argv[1]).err_no << "\n";
-            exit(1);
-        } else {
-            cout << "[FAIL] error al determinar el directorio de datos '";
-            cout << defDir << "': " << isDir(defDir).err_no << "\n";
-            exit(1);
-        }
+    dir = checkDataDir(argv[1], defDir);
 
     do {
         user_in = readInput(commands);
